@@ -1,32 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Light Theme Variables */
   --bg-color: #f8fafc;
   --surface-color: #ffffff;
   --surface-hover: #f1f5f9;
   --text-primary: #0f172a;
   --text-secondary: #64748b;
   --text-muted: #94a3b8;
-  
   --border-color: #e2e8f0;
-  
-  --primary: #1e3a8a; /* Navy */
+  --primary: #1e3a8a;
   --primary-hover: #1e40af;
   --primary-light: #eff6ff;
-  
-  --success: #10b981; /* Green for gains */
+  --success: #10b981;
   --success-bg: rgba(16, 185, 129, 0.1);
-  --danger: #ef4444; /* Red for losses */
+  --danger: #ef4444;
   --danger-bg: rgba(239, 68, 68, 0.1);
-  
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.5);
-  
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
@@ -35,26 +28,22 @@
 }
 
 [data-theme='dark'] {
-  /* Dark Theme Variables */
-  --bg-color: #0b1120;
-  --surface-color: #1e293b;
-  --surface-hover: #334155;
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #64748b;
-  
-  --border-color: #334155;
-  
-  --primary: #3b82f6; /* Lighter blue for dark mode visibility */
-  --primary-hover: #60a5fa;
-  --primary-light: rgba(59, 130, 246, 0.1);
-  
-  --success: #10b981;
-  --danger: #ef4444;
-  
-  --glass-bg: rgba(30, 41, 59, 0.7);
+  --bg-color: #0e1117;          /* warm deep dark, not pure black */
+  --surface-color: #181e2a;     /* soft navy card surface */
+  --surface-hover: #222b3a;     /* gentle hover */
+  --text-primary: #dde3ee;      /* warm off-white — no harsh glare */
+  --text-secondary: #8d97aa;    /* muted slate */
+  --text-muted: #505a6b;
+  --border-color: #2a3347;      /* barely visible border */
+  --primary: #5b9bd5;           /* soft sky blue — not eye-straining */
+  --primary-hover: #7ab3e3;
+  --primary-light: rgba(91, 155, 213, 0.12);
+  --success: #34c98a;           /* softer mint green */
+  --success-bg: rgba(52, 201, 138, 0.1);
+  --danger: #e05c5c;             /* muted warm red */
+  --danger-bg: rgba(224, 92, 92, 0.1);
+  --glass-bg: rgba(22, 28, 40, 0.88);
   --glass-border: rgba(255, 255, 255, 0.05);
-  
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
@@ -76,47 +65,37 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a  { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+input, select { font-family: inherit; }
 
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font-family: inherit;
-}
+/* ============================================================
+   FLUID TYPOGRAPHY  — scales automatically with viewport
+   clamp(min, fluid, max)  →  phone → tablet → desktop
+   ============================================================ */
+.h1, .h2, .h3, .h4 { font-weight: 600; letter-spacing: -0.025em; }
 
-input, select {
-  font-family: inherit;
-}
+.h1 { font-size: clamp(1.4rem,  4.5vw, 2.25rem);  line-height: 1.15; }
+.h2 { font-size: clamp(1.15rem, 3.5vw, 1.5rem);   line-height: 1.25; }
+.h3 { font-size: clamp(1rem,    2.8vw, 1.25rem);   line-height: 1.35; }
+.h4 { font-size: clamp(0.875rem,2.2vw, 1.125rem);  line-height: 1.4; }
 
-/* Typography Utility */
-.h1, .h2, .h3, .h4 {
-  font-weight: 600;
-  letter-spacing: -0.025em;
-}
+.text-sm { font-size: clamp(0.78rem, 1.8vw, 0.875rem); }
+.text-xs { font-size: clamp(0.68rem, 1.4vw, 0.75rem);  }
 
-.h1 { font-size: 2.25rem; line-height: 2.5rem; }
-.h2 { font-size: 1.5rem; line-height: 2rem; }
-.h3 { font-size: 1.25rem; line-height: 1.75rem; }
-.h4 { font-size: 1.125rem; line-height: 1.5rem; }
-
-.text-sm { font-size: 0.875rem; }
-.text-xs { font-size: 0.75rem; }
-
-
-
-/* Utilities */
+/* ============================================================
+   CONTAINER — fluid padding for every screen width
+   ============================================================ */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 clamp(0.75rem, 4vw, 1.5rem);
+  width: 100%;
 }
 
-
-
+/* ============================================================
+   GLASS PANEL
+   ============================================================ */
 .glass-panel {
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
@@ -132,22 +111,30 @@ input, select {
   box-shadow: var(--shadow-lg);
 }
 
-.text-success { color: var(--success); }
-.text-danger { color: var(--danger); }
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.text-success   { color: var(--success); }
+.text-danger    { color: var(--danger); }
 .text-secondary { color: var(--text-secondary); }
+.font-bold      { font-weight: 700; }
+.font-medium    { font-weight: 500; }
+.text-right     { text-align: right; }
 
-.flex { display: flex; }
-.flex-col { flex-direction: column; }
-.items-center { align-items: center; }
+.flex            { display: flex; }
+.flex-col        { flex-direction: column; }
+.items-center    { align-items: center; }
 .justify-between { justify-content: space-between; }
-.justify-center { justify-content: center; }
+.justify-center  { justify-content: center; }
 .gap-1 { gap: 0.25rem; }
 .gap-2 { gap: 0.5rem; }
 .gap-3 { gap: 0.75rem; }
 .gap-4 { gap: 1rem; }
 .gap-6 { gap: 1.5rem; }
 
-/* Buttons */
+/* ============================================================
+   BUTTONS
+   ============================================================ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -156,52 +143,35 @@ input, select {
   border-radius: var(--radius-md);
   font-weight: 500;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
-.btn-primary {
-  background-color: var(--primary);
-  color: white;
-}
+.btn-primary { background-color: var(--primary); color: white; }
+.btn-primary:hover { background-color: var(--primary-hover); }
 
-.btn-primary:hover {
-  background-color: var(--primary-hover);
-}
+.btn-outline { border: 1px solid var(--border-color); background-color: transparent; color: var(--text-primary); }
+.btn-outline:hover { background-color: var(--surface-hover); }
 
-.btn-outline {
-  border: 1px solid var(--border-color);
-  background-color: transparent;
-  color: var(--text-primary);
-}
-
-.btn-outline:hover {
-  background-color: var(--surface-hover);
-}
-
+/* 44×44px minimum tap target — WCAG & iOS guideline */
 .btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
   padding: 0.5rem;
   border-radius: 50%;
   color: var(--text-secondary);
+  flex-shrink: 0;
 }
 
-.btn-icon:hover {
-  background-color: var(--surface-hover);
-  color: var(--primary);
-}
+.btn-icon:hover { background-color: var(--surface-hover); color: var(--primary); }
 
-
-
-/* Inputs */
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.input-label {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-}
+/* ============================================================
+   INPUTS
+   ============================================================ */
+.input-group  { display: flex; flex-direction: column; gap: 0.5rem; }
+.input-label  { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); }
 
 .input-field {
   padding: 0.75rem 1rem;
@@ -211,23 +181,49 @@ input, select {
   color: var(--text-primary);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   outline: none;
+  width: 100%;
 }
 
-.input-field:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px var(--primary-light);
-}
+.input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
 
-/* Animations */
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.4s ease forwards;
+.animate-fade-in { animation: fadeIn 0.4s ease forwards; }
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.10s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.20s; }
+
+/* ============================================================
+   RESPONSIVE LAYOUT SYSTEM
+   ============================================================
+   Phone   : ≤ 640px
+   Tablet  : 641px – 1024px
+   Desktop : ≥ 1025px
+   ============================================================ */
+
+/* ------ TABLET ------ */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container { padding: 0 1.25rem; }
 }
 
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
+/* ------ MOBILE (≤ 640px) ------ */
+@media (max-width: 640px) {
+  /* Space for fixed bottom nav */
+  body { padding-bottom: 4.5rem; }
+
+  /* No lift animation on touch */
+  .glass-panel:hover { transform: none; }
+
+  /* Prevent iOS auto-zoom on inputs (must be ≥ 16px) */
+  .input-field { font-size: 1rem; }
+
+  /* Smaller button padding on small screens */
+  .btn { padding: 0.45rem 0.875rem; font-size: 0.9rem; }
+}

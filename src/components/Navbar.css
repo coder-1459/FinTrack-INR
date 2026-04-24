@@ -364,3 +364,49 @@
   text-decoration: underline;
 }
 
+
+/* ============================================================
+   NAVBAR RESPONSIVE
+   ============================================================ */
+
+/* TABLET */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .search-input { width: 150px; }
+  .search-input:focus { width: 200px; }
+  .notification-dropdown { width: 360px; }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .hidden-mobile { display: none !important; }
+
+  .navbar-content { height: 4rem; overflow: visible; }
+
+  .navbar-actions { display: flex; align-items: center; gap: 0.25rem; flex-shrink: 0; }
+
+  .navbar-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    display: flex; justify-content: space-around;
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    padding: 0.3rem 0.5rem; z-index: 200;
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 -2px 16px rgba(0,0,0,0.12);
+  }
+
+  .nav-link {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 0.15rem; font-size: 0.68rem; padding: 0.35rem 1.25rem; min-width: 56px;
+  }
+
+  .nav-link.active::after { top: -0.4rem; bottom: auto; }
+
+  .notification-dropdown {
+    position: fixed; top: auto; bottom: 4.25rem;
+    left: 0.75rem; right: 0.75rem; width: auto; max-height: 72vh; overflow-y: auto;
+  }
+
+  .notification-list { max-height: 55vh; }
+  .brand-name { font-size: 1rem; }
+  .navbar { margin-bottom: 1rem; }
+}

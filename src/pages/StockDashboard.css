@@ -228,3 +228,41 @@
 }
 
 
+
+/* ============================================================
+   STOCK DASHBOARD RESPONSIVE
+   ============================================================ */
+
+/* TABLET */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .indices-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .sentiment-card { grid-column: span 2; }
+  .dashboard-grid { grid-template-columns: 1.5fr 1fr; }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .page-header { margin-bottom: 1rem; }
+
+  .indices-grid { grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+  .sentiment-card { grid-column: span 1; }
+  .index-card { padding: 1rem; }
+  .index-chart { width: 72px; }
+  .index-value { flex-wrap: wrap; gap: 0.35rem; }
+
+  .dashboard-grid { grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+
+  .stock-row { padding: 0.75rem 1rem; }
+  .hide-mobile { display: none !important; }
+  .stock-name { gap: 0.5rem; flex: 1; min-width: 0; }
+  .stock-price { flex: 0 0 auto; text-align: right; }
+
+  .widget-header { padding: 0.875rem 1rem; }
+
+  .sectors-grid { grid-template-columns: repeat(2, 1fr); gap: 0.4rem; padding: 0.875rem; }
+  .sector-box { padding: 0.6rem 0.4rem; }
+  .sector-name { font-size: 0.73rem; }
+  .sector-value { font-size: 0.9rem; }
+
+  .news-item { padding: 0.75rem 1rem; }
+}
