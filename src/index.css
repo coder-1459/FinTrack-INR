@@ -208,22 +208,21 @@ input, select { font-family: inherit; }
    Desktop : ≥ 1025px
    ============================================================ */
 
-/* ------ TABLET ------ */
+/* ------ TABLET (641px - 1024px) ------ */
 @media (min-width: 641px) and (max-width: 1024px) {
   .container { padding: 0 1.25rem; }
 }
 
-/* ------ MOBILE (≤ 640px) ------ */
-@media (max-width: 640px) {
+/* ------ MOBILE + SMALL TABLET (<=900px) ------ */
+@media (max-width: 900px) {
   /* Space for fixed bottom nav */
-  body { padding-bottom: 4.5rem; }
+  body { padding-bottom: 4.75rem; }
 
-  /* No lift animation on touch */
+  /* No hover lift on touch screens */
   .glass-panel:hover { transform: none; }
 
-  /* Prevent iOS auto-zoom on inputs (must be ≥ 16px) */
+  /* Prevent iOS auto-zoom on inputs */
   .input-field { font-size: 1rem; }
 
-  /* Smaller button padding on small screens */
   .btn { padding: 0.45rem 0.875rem; font-size: 0.9rem; }
 }
