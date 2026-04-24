@@ -191,6 +191,35 @@
   }
 }
 
+@media (max-width: 768px) {
+  .page-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .widget-header {
+    padding: 1rem;
+  }
+
+  .converter-widget .converter-inputs {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .result-amount {
+    font-size: 1.75rem;
+  }
+
+  .conversion-result {
+    padding: 1rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
 @media (max-width: 640px) {
   .currency-selectors {
     flex-direction: column;
@@ -206,4 +235,26 @@
   .swap-btn:hover {
     transform: rotate(270deg);
   }
+
+  .result-amount {
+    font-size: 1.5rem;
+  }
+
+  .amount-input {
+    font-size: 1.2rem;
+    padding: 0.75rem;
+  }
 }
+
+@media (max-width: 480px) {
+  .comparison-table th:nth-child(3),
+  .comparison-table td:nth-child(3) {
+    display: none;
+  }
+
+  .chart-container {
+    min-height: 200px;
+    padding: 1rem;
+  }
+}
+
