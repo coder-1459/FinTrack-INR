@@ -176,7 +176,7 @@ const Navbar = () => {
           
           <div className="notification-wrapper" ref={notifRef}>
             <button 
-              className="btn-icon animate-fade-in stagger-1 relative" 
+              className="btn-icon relative" 
               aria-label="Notifications"
               onClick={() => setShowNotifications(!showNotifications)}
             >
@@ -221,7 +221,7 @@ const Navbar = () => {
           </div>
           
           <button 
-            className="btn-icon animate-fade-in stagger-2" 
+            className="btn-icon" 
             onClick={toggleTheme}
             aria-label="Toggle theme"
           >

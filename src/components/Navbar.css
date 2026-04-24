@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: space-between;
   height: 4.5rem;
+  overflow: visible;
 }
 
 .navbar-brand {
@@ -70,6 +71,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-shrink: 0;
 }
 
 .search-bar {
@@ -360,77 +362,5 @@
 .btn-link:hover {
   color: var(--primary-hover);
   text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .hidden-mobile {
-    display: none;
-  }
-  
-  .navbar-content {
-    height: 3.75rem;
-  }
-
-  .navbar-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--surface-color);
-    border-top: 1px solid var(--border-color);
-    padding: 0.35rem 0.5rem;
-    justify-content: space-around;
-    z-index: 100;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
-  }
-  
-  .nav-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 0.7rem;
-    padding: 0.4rem 0.75rem;
-    min-width: 60px;
-  }
-  
-  .nav-link.active::after {
-    top: -0.5rem;
-    bottom: auto;
-  }
-
-  .notification-dropdown {
-    position: fixed;
-    top: auto;
-    bottom: 4.5rem;
-    right: 0.5rem;
-    left: 0.5rem;
-    width: auto;
-    max-height: 75vh;
-    overflow-y: auto;
-  }
-
-  .notification-list {
-    max-height: 50vh;
-  }
-
-  .navbar-actions {
-    gap: 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar-brand .brand-name {
-    font-size: 0.95rem;
-  }
-
-  .navbar-actions {
-    gap: 0.25rem;
-  }
-
-  .search-bar {
-    display: none;
-  }
 }
 
